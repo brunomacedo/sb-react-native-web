@@ -8,6 +8,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@shopify/restyle": "^2.4.2",
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
@@ -25,12 +26,13 @@
     "@storybook/react-webpack5": "^7.0.26",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/react": "~18.0.14",
+    "@types/react-native": "^0.72.2",
     "babel-loader": "^9.1.2",
     "babel-plugin-react-native-web": "^0.19.6",
     "react-dom": "^18.2.0",
+    "react-native-reanimated": "^2.9.1",
     "react-native-web": "^0.19.6",
     "storybook": "^7.0.26",
     "typescript": "^4.9.4"
-  },
-  "private": true
+  }
 }
