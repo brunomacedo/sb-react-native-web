@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "sb-app-chiper": [
+        "./src/index.tsx",
+      ]
+    },
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+  },
+  "extends": "expo/tsconfig.base"
+}
