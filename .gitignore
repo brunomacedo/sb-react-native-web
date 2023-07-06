@@ -2,6 +2,7 @@
 .expo/
 dist/
 lib/
+storybook-static/
 
 # React Native
 *.jks
