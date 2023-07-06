@@ -16,6 +16,6 @@ export const Basic: StoryFn<typeof Button> = (args) => (
 Basic.args = {
   label: 'Hello World',
   variant: 'primary',
+  type: 'small',
   maxWidth: 200,
-  height: 40,
 };

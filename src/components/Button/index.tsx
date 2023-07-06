@@ -1,7 +1,6 @@
 import React from 'react';
 import { GestureResponderEvent, TouchableOpacity } from 'react-native';
 import {
-  useRestyle,
   spacing,
   border,
   backgroundColor,
@@ -12,8 +11,6 @@ import {
 } from '@shopify/restyle';
 import { Text } from '../Text';
 import { Box } from '../Box';
-
-import { Normalize } from '../../utils/normalize';
 
 import { useTheme } from '../../theme/ThemeProvider';
 import type { Theme } from '../../theme/theme';
@@ -28,14 +25,6 @@ type ButtonProps = React.ComponentProps<typeof ButtonContainer> & {
 };
 
 type TypeButton = 'large' | 'medium' | 'small';
-
-// const restyleFunctions = [spacing, border, backgroundColor];
-
-const restyleFunctions = composeRestyleFunctions([
-  spacing,
-  border,
-  backgroundColor,
-]);
 
 const ButtonContainer = createRestyleComponent<
   VariantProps<Theme, 'buttonVariants'> &
@@ -64,9 +53,9 @@ const colorText: {
 };
 
 const typeButton: { [key in TypeButton]: number } = {
-  large: Normalize(48),
-  medium: Normalize(40),
-  small: Normalize(32),
+  large: 20,
+  medium: 10,
+  small: 20,
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -79,8 +68,6 @@ export const Button: React.FC<ButtonProps> = ({
   icon,
   ...rest
 }) => {
-  const props = useRestyle(restyleFunctions, rest);
-
   const { fonts } = useTheme();
   const isOutlinedDisabled = disabled && variant === 'outlined';
 
@@ -107,8 +94,8 @@ export const Button: React.FC<ButtonProps> = ({
         justifyContent="center"
         alignItems="center"
         flexDirection="row"
-        borderRadius={Normalize(4)}
-        {...props}
+        borderRadius={4}
+        {...rest}
       >
         <Text
           color={textColor}
