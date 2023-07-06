@@ -1,0 +1,44 @@
+@font-face {
+	font-family: 'CaustenRound-Black';
+	src: url('../fonts/CaustenRound/CaustenRound-Black.woff2') format('woff2'),
+		url('../fonts/CaustenRound/CaustenRound-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'CaustenRound-Bold';
+	src: url('../fonts/CaustenRound/CaustenRound-Bold.woff2') format('woff2'),
+		url('../fonts/CaustenRound/CaustenRound-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'CaustenRound-Light';
+	src: url('../fonts/CaustenRound/CaustenRound-Light.woff2') format('woff2'),
+		url('../fonts/CaustenRound/CaustenRound-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'CaustenRound-Medium';
+	src: url('../fonts/CaustenRound/CaustenRound-Medium.woff2') format('woff2'),
+		url('../fonts/CaustenRound/CaustenRound-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'CaustenRound-Regular';
+	src: url('../fonts/CaustenRound/CaustenRound-Regular.woff2') format('woff2'),
+		url('../fonts/CaustenRound/CaustenRound-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

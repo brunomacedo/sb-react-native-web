@@ -1,21 +1,19 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import { Button, ThemeProvider } from 'react-native-sb-chiper';
+import { Button as Component, ThemeProvider } from 'react-native-sb-chiper';
 
 export default {
-  title: 'components/Button',
-  component: Button,
-} as Meta<typeof Button>;
+  title: 'Components/Button',
+  component: Component,
+  args: {
+    label: 'Hello World',
+    variant: 'primary',
+    type: 'small',
+  },
+} as Meta<typeof Component>;
 
-export const Basic: StoryFn<typeof Button> = (args) => (
+export const Button: StoryFn<typeof Component> = (args) => (
   <ThemeProvider>
-    <Button {...args} />
+    <Component {...args} />
   </ThemeProvider>
 );
-
-Basic.args = {
-  label: 'Hello World',
-  variant: 'primary',
-  type: 'small',
-  maxWidth: 200,
-};

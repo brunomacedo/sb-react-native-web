@@ -1,5 +1,4 @@
 import { createTheme } from '@shopify/restyle';
-import { Normalize } from '../utils/normalize';
 
 export const colors = {
   //Primary
@@ -47,16 +46,16 @@ export const fonts = {
 
 export const spacing = {
   'spacing-none': 0,
-  'spacing-xxxxs': Normalize(1),
-  'spacing-xxxs': Normalize(2),
-  'spacing-xxs': Normalize(4),
-  'spacing-xs': Normalize(8),
-  'spacing-xms': Normalize(12),
-  'spacing-s': Normalize(16),
-  'spacing-xm': Normalize(20),
-  'spacing-m': Normalize(24),
-  'spacing-l': Normalize(48),
-  'spacing-xl': Normalize(96),
+  'spacing-xxxxs': 1,
+  'spacing-xxxs': 2,
+  'spacing-xxs': 4,
+  'spacing-xs': 8,
+  'spacing-xms': 12,
+  'spacing-s': 16,
+  'spacing-xm': 20,
+  'spacing-m': 24,
+  'spacing-l': 48,
+  'spacing-xl': 96,
 };
 
 export const theme = createTheme({
@@ -68,48 +67,48 @@ export const theme = createTheme({
   },
   textVariants: {
     H1: {
-      fontSize: Normalize(32),
-      lineHeight: Normalize(36),
+      fontSize: 32,
+      lineHeight: 36,
       fontFamily: 'CaustenRound-Regular',
     },
     H2: {
-      fontSize: Normalize(28),
-      lineHeight: Normalize(32),
+      fontSize: 28,
+      lineHeight: 32,
       fontFamily: 'CaustenRound-Regular',
     },
     H3: {
-      fontSize: Normalize(24),
-      lineHeight: Normalize(28),
+      fontSize: 24,
+      lineHeight: 28,
       fontFamily: 'CaustenRound-Regular',
     },
     H4: {
-      fontSize: Normalize(20),
-      lineHeight: Normalize(24),
+      fontSize: 20,
+      lineHeight: 24,
       fontFamily: 'CaustenRound-Regular',
     },
     SubTitle: {
-      fontSize: Normalize(18),
-      lineHeight: Normalize(22),
+      fontSize: 18,
+      lineHeight: 22,
       fontFamily: 'CaustenRound-Regular',
     },
     body: {
-      fontSize: Normalize(16),
-      lineHeight: Normalize(20),
+      fontSize: 16,
+      lineHeight: 20,
       fontFamily: 'CaustenRound-Regular',
     },
     mediumBody: {
-      fontSize: Normalize(14),
-      lineHeight: Normalize(18),
+      fontSize: 14,
+      lineHeight: 18,
       fontFamily: 'CaustenRound-Regular',
     },
     label: {
-      fontSize: Normalize(12),
-      lineHeight: Normalize(16),
+      fontSize: 12,
+      lineHeight: 16,
       fontFamily: 'CaustenRound-Regular',
     },
     SubHead: {
-      fontSize: Normalize(10),
-      lineHeight: Normalize(14),
+      fontSize: 10,
+      lineHeight: 14,
       fontFamily: 'CaustenRound-Regular',
     },
   },
