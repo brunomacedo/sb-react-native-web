@@ -1,17 +1,44 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
-      "sb-app-chiper": [
-        "./src/index.tsx",
+      "react-native-sb-chiper": [
+        "src/index.tsx"
       ]
     },
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "react-native",
     "lib": [
       "dom",
       "esnext"
     ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext"
   },
-  "extends": "expo/tsconfig.base"
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "lib",
+    "dist",
+    "babel.config.js",
+    "commitlint.config.js",
+    "jest.config.js",
+    "metro.config.js",
+    "node_modules"
+  ]
 }

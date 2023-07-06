@@ -1,18 +1,40 @@
 {
-  "name": "sb-app-chiper",
-  "version": "0.0.1",
-  "main": "node_modules/expo/AppEntry.js",
-  "source": "src/index",
+  "name": "react-native-sb-chiper",
+  "version": "0.43.0",
+  "description": "React Native component library using Shopify's Restyle",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index.tsx",
+  "source": "src/index.tsx",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chiper-inc/react-native-sb-chiper.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "contributors": [
+    "Bruno Macedo <contato@brunomacedo.com.br> (https://github.com/brunomacedo)"
+  ],
   "scripts": {
-    "start": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "npx husky install && yarn build && bob build",
+    "build": "yarn tsc -p tsconfig.build.json"
   },
   "dependencies": {
     "@shopify/restyle": "^2.4.2",
+    "date-fns": "^2.30.0",
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
+    "i18next": "^23.2.7",
+    "phosphor-react-native": "^1.1.2",
     "react": "18.2.0",
-    "react-native": "0.71.8"
+    "react-i18next": "^13.0.1",
+    "react-native": "0.71.8",
+    "rn-tooltip": "^3.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -29,10 +51,30 @@
     "@types/react-native": "^0.72.2",
     "babel-loader": "^9.1.2",
     "babel-plugin-react-native-web": "^0.19.6",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "react-dom": "^18.2.0",
+    "react-native-builder-bob": "^0.21.2",
     "react-native-reanimated": "^2.9.1",
     "react-native-web": "^0.19.6",
     "storybook": "^7.0.26",
     "typescript": "^4.9.4"
-  }
+  },
+  "react-native-builder-bob": {
+    "source": "dist",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      ["typescript", { "project": "tsconfig.build.json" }]
+    ]
+  },
+  "files": [
+    "lib/**"
+  ],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/",
+    "dist/"
+  ]
 }

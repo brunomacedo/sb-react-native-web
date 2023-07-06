@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import { Button, ThemeProvider } from 'sb-app-chiper';
+import { Button, ThemeProvider } from 'react-native-sb-chiper';
 
 export default {
   title: 'components/Button',

@@ -1,13 +1,9 @@
 import React from 'react';
 import { GestureResponderEvent, TouchableOpacity } from 'react-native';
 import {
-  spacing,
-  border,
-  backgroundColor,
   createVariant,
   VariantProps,
   createRestyleComponent,
-  composeRestyleFunctions,
 } from '@shopify/restyle';
 import { Text } from '../Text';
 import { Box } from '../Box';

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "sb-app-chiper",
-    "slug": "sb-app-chiper",
+    "name": "react-native-sb-chiper",
+    "slug": "react-native-sb-chiper",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

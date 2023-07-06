@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig",
+  "exclude": [
+    "src/**/*.stories.*",
+    "src/**/*.test.*",
+    "src/**/*.mdx"
+  ]
+}
