@@ -9,20 +9,25 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/brunomacedo/sb-react-native-web.git"
+    "url": "git+https://github.com/brunomacedo/sb-react-native-web.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "contributors": [
-    "Bruno Macedo <contato@brunomacedo.com.br> (https://github.com/brunomacedo)"
+    {
+      "name": "Bruno Macedo",
+      "email": "contato@brunomacedo.com.br",
+      "url": "https://github.com/brunomacedo"
+    }
   ],
   "scripts": {
     "start": "expo start",
     "storybook": "storybook dev -p 6006",
     "build": "yarn tsc -p tsconfig.build.json",
     "build-storybook": "storybook build",
-    "prepare": "npx husky install && yarn build && bob build"
+    "prepare": "npx husky install && yarn build && bob build",
+    "chromatic": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
   },
   "dependencies": {
     "@shopify/restyle": "^2.4.2",
@@ -50,6 +55,7 @@
     "@types/react-native": "^0.72.2",
     "babel-loader": "^9.1.2",
     "babel-plugin-react-native-web": "^0.19.6",
+    "chromatic": "^6.19.9",
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
     "husky": "^8.0.3",
@@ -85,5 +91,11 @@
   ],
   "files": [
     "lib/**"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/brunomacedo/sb-react-native-web/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/brunomacedo/sb-react-native-web#readme",
+  "_id": "sb-react-native-web@0.43.0"
 }
