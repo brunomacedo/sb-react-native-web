@@ -2,7 +2,6 @@
   "name": "react-native-sb-chiper",
   "version": "0.43.0",
   "description": "React Native component library using Shopify's Restyle",
-  "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "types": "lib/typescript/index.d.ts",
   "react-native": "src/index.tsx",
@@ -19,8 +18,9 @@
     "Bruno Macedo <contato@brunomacedo.com.br> (https://github.com/brunomacedo)"
   ],
   "scripts": {
-    "build": "yarn tsc -p tsconfig.build.json",
+    "start": "expo start",
     "storybook": "storybook dev -p 6006",
+    "build": "yarn tsc -p tsconfig.build.json",
     "build-storybook": "storybook build",
     "prepare": "npx husky install && yarn build && bob build"
   },

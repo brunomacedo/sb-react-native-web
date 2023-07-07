@@ -62,6 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'large',
   loading = false,
   icon,
+  ...rest
 }) => {
   const props = useTheme();
   const isOutlinedDisabled = disabled && variant === 'outlined';
@@ -90,6 +91,7 @@ export const Button: React.FC<ButtonProps> = ({
         alignItems="center"
         flexDirection="row"
         borderRadius={4}
+        {...rest}
       >
         {loading ? (
           <Spinner

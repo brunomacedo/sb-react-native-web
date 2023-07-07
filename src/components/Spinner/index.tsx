@@ -9,7 +9,6 @@ import Animated, {
 } from 'react-native-reanimated';
 import { colors } from '../../theme/theme';
 import { Box } from '../Box';
-import { Normalize } from '../../utils/normalize';
 
 interface IProps {
   variant?: 'primary' | 'secondary';
@@ -25,9 +24,9 @@ export const Spinner = ({ variant = 'primary', size = 'medium' }: IProps) => {
 
   const spinnerSize = React.useMemo(
     () => ({
-      small: Normalize(22),
-      medium: Normalize(26),
-      large: Normalize(30),
+      small: 22,
+      medium: 26,
+      large: 30,
     }),
     []
   );

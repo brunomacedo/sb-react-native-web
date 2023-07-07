@@ -2,6 +2,7 @@
   "expo": {
     "name": "react-native-sb-chiper",
     "slug": "react-native-sb-chiper",
+    "main": "node_modules/expo/AppEntry.js",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./public/favicon-32x32.png",
