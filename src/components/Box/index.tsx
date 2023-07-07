@@ -1,6 +1,7 @@
+import React from 'react';
+import { Animated } from 'react-native';
 import { createBox } from '@shopify/restyle';
 import Reanimated from 'react-native-reanimated';
-import { Animated } from 'react-native';
 
 import type { Theme } from './../../theme/theme';
 

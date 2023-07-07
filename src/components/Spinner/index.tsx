@@ -7,19 +7,19 @@ import Animated, {
   Easing,
   withRepeat,
 } from 'react-native-reanimated';
-import { colors } from '../../theme/theme';
+
+import { theme } from '../../theme/theme';
 import { Box } from '../Box';
 
 interface IProps {
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
 }
-/**
- * This is a custom spinner loader that uses Animated API to create a circular spinner
- * @param variant - The color of the spinner (primary or secondary) - default is primary
- * @param size - The size of the spinner (small, medium or large) - default is medium
- */
-export const Spinner = ({ variant = 'primary', size = 'medium' }: IProps) => {
+
+export const Spinner = ({
+  variant = 'primary',
+  size = 'medium',
+}: IProps) => {
   const rotation = useSharedValue(0);
 
   const spinnerSize = React.useMemo(
@@ -30,10 +30,11 @@ export const Spinner = ({ variant = 'primary', size = 'medium' }: IProps) => {
     }),
     []
   );
+
   const spinnerColor = React.useMemo(
     () => ({
-      primary: colors.white,
-      secondary: colors.green,
+      primary: theme.colors.white,
+      secondary: theme.colors.green,
     }),
     []
   );
@@ -42,6 +43,7 @@ export const Spinner = ({ variant = 'primary', size = 'medium' }: IProps) => {
     width: spinnerSize[size],
     height: spinnerSize[size],
   };
+
   const colorStyle = {
     borderColor: spinnerColor[variant],
   };
@@ -69,7 +71,12 @@ export const Spinner = ({ variant = 'primary', size = 'medium' }: IProps) => {
   return (
     <Box style={styles.container}>
       <Animated.View
-        style={[styles.spinner, animatedStyles, sizeStyle, colorStyle]}
+        style={[
+          styles.spinner,
+          animatedStyles,
+          sizeStyle,
+          colorStyle,
+        ]}
       />
     </Box>
   );

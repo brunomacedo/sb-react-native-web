@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { ReactNode } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-import { Theme, colors } from '../../theme/theme';
+import { theme } from '../../theme/theme';
 import { Box } from '../Box';
+import type { Theme } from '../../theme/theme';
 
 export function Wrapper({
   children,
@@ -34,6 +35,6 @@ export function Wrapper({
 }
 
 const styles = StyleSheet.create({
-  grow: { flexGrow: 1, backgroundColor: colors.ghostWhite },
-  safearea: { flex: 1, backgroundColor: colors.ghostWhite },
+  grow: { flexGrow: 1, backgroundColor: theme.colors.ghostWhite },
+  safearea: { flex: 1, backgroundColor: theme.colors.ghostWhite },
 });
