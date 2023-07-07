@@ -1,12 +1,16 @@
 {
-  "name": "react-native-sb-chiper",
+  "name": "sb-react-native-web",
   "version": "0.43.0",
-  "description": "React Native component library using Shopify's Restyle",
+  "description": "React Native Storybook Web library using Shopify's Restyle",
   "module": "lib/module/index.js",
   "types": "lib/typescript/index.d.ts",
   "react-native": "src/index.tsx",
   "source": "src/index.tsx",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunomacedo/sb-react-native-web.git"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -71,12 +75,15 @@
       ]
     ]
   },
+  "keywords": [
+    "storybook",
+    "react-native",
+    "react-native-web",
+    "shopify/restyle",
+    "design-system",
+    "expo"
+  ],
   "files": [
     "lib/**"
-  ],
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/",
-    "dist/"
   ]
 }

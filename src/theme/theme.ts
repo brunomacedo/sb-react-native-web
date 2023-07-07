@@ -4,7 +4,7 @@ export const colors = {
   //Primary
   yankeesBlue: '#2B2845',
   green: '#00B56B',
-  chiperBrandRed: '#FF0136',
+  brandRed: '#FF0136',
   darkBlueGray: '#666A8F',
   ghostWhite: '#FAFBFC',
   white: '#FFFFFF',
@@ -143,7 +143,7 @@ export const theme = createTheme({
       backgroundColor: 'green',
     },
     danger: {
-      backgroundColor: 'chiperBrandRed',
+      backgroundColor: 'brandRed',
     },
     light: {
       backgroundColor: 'white',

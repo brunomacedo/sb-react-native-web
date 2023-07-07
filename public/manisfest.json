@@ -1,6 +1,6 @@
 {
-  "name": "Storybook React Chiper",
-  "short_name": "sb-web-chiper",
+  "name": "Storybook React Native Web",
+  "short_name": "sb-react-native-web",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

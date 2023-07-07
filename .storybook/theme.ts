@@ -2,9 +2,7 @@ import { create } from "@storybook/theming";
 
 export default create({
 	base: "dark",
-	brandTitle: "Chiper",
-	brandImage: './chiper-brand.svg',
-
-  // Typography
+	brandTitle: "React Native Web",
+	brandImage: './brand-logo.svg',
   fontBase: '"CaustenRound-Regular", sans-serif',
 });

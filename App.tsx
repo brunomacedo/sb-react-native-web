@@ -24,6 +24,17 @@ const App = () => {
         <Button
           label="Text"
           onPress={() => { }}
+        />
+        <Button
+          label="Text"
+          onPress={() => { }}
+          marginTop="spacing-m"
+          loading
+        />
+        <Button
+          label="Text"
+          onPress={() => { }}
+          marginTop="spacing-m"
           icon={(
             <User
               weight="bold"
@@ -31,12 +42,6 @@ const App = () => {
               size={14}
             />)
           }
-        />
-        <Button
-          label="Text"
-          onPress={() => { }}
-          marginTop="spacing-m"
-          loading
         />
       </Wrapper>
     </ThemeProvider>

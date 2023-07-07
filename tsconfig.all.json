@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "paths": {
-      "react-native-sb-chiper": [
+      "sb-react-native-web": [
         "./src/index.tsx"
       ]
     },
