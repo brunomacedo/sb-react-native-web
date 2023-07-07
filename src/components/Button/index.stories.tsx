@@ -9,7 +9,7 @@ export default {
   args: {
     label: 'Primary',
     variant: 'primary',
-    type: 'small',
+    type: 'medium',
   },
 } as Meta<typeof Component>;
 
