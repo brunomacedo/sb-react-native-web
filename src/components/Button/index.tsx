@@ -55,7 +55,7 @@ const typeButton: { [key in TypeButton]: number } = {
 };
 
 /**
- * `ChiperButton` is an interactive element that allows users to trigger all
+ * `Button` is an interactive element that allows users to trigger all
  * primary and secondary actions
  *
  * #### Usage:

@@ -32,14 +32,17 @@
     "src"
   ],
   "exclude": [
-    "lib",
     "dist",
-    "public",
+    "lib",
     "node_modules",
+    "public",
+    "test-utils",
     "app.config.js",
     "babel.config.js",
+    "bob.config.js",
     "commitlint.config.js",
     "jest.config.js",
+    "jest.setup.js",
     "metro.config.js",
     "storybook.requires.js"
   ]

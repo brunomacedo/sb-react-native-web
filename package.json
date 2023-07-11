@@ -21,12 +21,18 @@
       "url": "https://github.com/brunomacedo"
     }
   ],
+  "homepage": "https://github.com/brunomacedo/sb-react-native-web#readme",
+  "bugs": {
+    "url": "https://github.com/brunomacedo/sb-react-native-web/issues"
+  },
   "scripts": {
+    "test": "jest --watch --verbose",
     "start": "cross-env STORYBOOK_ENABLED='true' sb-rn-get-stories && expo start",
     "storybook": "storybook dev -p 6006",
-    "build": "yarn tsc -p tsconfig.build.json",
+    "build": "bob build",
     "build-storybook": "storybook build",
-    "prepare": "npx husky install && yarn build && bob build",
+    "prepare": "npx husky install && yarn prebuild && bob build",
+    "prebuild": "rm -rf ./dist && yarn tsc -p tsconfig.build.json",
     "chromatic": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
   },
   "dependencies": {
@@ -57,6 +63,9 @@
     "@storybook/react-native": "^6.5.4",
     "@storybook/react-webpack5": "^7.0.26",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@testing-library/jest-native": "^5.4.2",
+    "@testing-library/react-native": "^12.1.2",
+    "@types/jest": "^29.5.3",
     "@types/react": "~18.0.14",
     "@types/react-native": "^0.72.2",
     "babel-loader": "^9.1.2",
@@ -66,28 +75,16 @@
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
     "husky": "^8.0.3",
+    "jest": "^29.6.1",
     "lint-staged": "^13.2.3",
     "react-dom": "^18.2.0",
     "react-native-builder-bob": "^0.21.2",
     "react-native-reanimated": "~2.14.4",
     "react-native-safe-area-context": "4.5.0",
     "react-native-web": "~0.18.10",
+    "react-test-renderer": "^18.2.0",
     "storybook": "^7.0.26",
     "typescript": "^4.9.4"
-  },
-  "react-native-builder-bob": {
-    "source": "dist",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
   },
   "keywords": [
     "storybook",
@@ -99,11 +96,5 @@
   ],
   "files": [
     "lib/**"
-  ],
-  "bugs": {
-    "url": "https://github.com/brunomacedo/sb-react-native-web/issues"
-  },
-  "readme": "ERROR: No README data found!",
-  "homepage": "https://github.com/brunomacedo/sb-react-native-web#readme",
-  "_id": "sb-react-native-web@0.43.0"
+  ]
 }
