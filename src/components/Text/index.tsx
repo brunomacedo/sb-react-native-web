@@ -27,11 +27,31 @@ type BaseTextProps<Theme extends BaseTheme> = ColorProps<Theme> &
 
 interface IProps {
   bold?: boolean;
+  color?: keyof Theme['colors'];
 }
 
 export type TextProps<Theme extends BaseTheme> = BaseTextProps<Theme> &
   SpacingShorthandProps<Theme>;
 
+/**
+ * `Text` helps us create hierarchies, organize
+ * information, and guide our users through pages.
+ *
+ * #### Usage:
+ *
+ * ```tsx
+  import { Text } from "sb-react-native-webr";
+
+  <Text
+    color="philippineGreen"
+    variant="body"
+  >
+    Hello world!
+  </Text>
+ * ```
+ *
+ * #### Demo:
+ */
 export const Text = ({
   children,
   bold = false,

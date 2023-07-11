@@ -54,8 +54,43 @@ const typeButton: { [key in TypeButton]: number } = {
   small: 32,
 };
 
+/**
+ * `ChiperButton` is an interactive element that allows users to trigger all
+ * primary and secondary actions
+ *
+ * #### Usage:
+ *
+ * ```tsx
+  import { Button } from "sb-react-native-web";
+
+  <Button
+    label="Primary"
+    onPress={() => {}}
+    type="medium"
+    variant="primary"
+  />
+  <Button
+    label="Primary"
+    loading
+    marginTop="spacing-s"
+    onPress={() => {}}
+    type="medium"
+    variant="primary"
+  />
+  <Button
+    icon={<User color="#FFFFFF" size={14} weight="bold"/>}
+    label="Text"
+    marginTop="spacing-s"
+    onPress={() => {}}
+    type="medium"
+    variant="primary"
+  />
+ * ```
+ *
+ * #### Demo:
+ */
 export const Button: React.FC<ButtonProps> = ({
-  onPress = () => console.warn('onPress is a required field'),
+  onPress,
   label,
   disabled,
   variant = 'primary',

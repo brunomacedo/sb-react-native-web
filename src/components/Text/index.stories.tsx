@@ -6,7 +6,7 @@ export default {
   title: 'Components/Text',
   component: Component,
   args: {
-    color: "brandRed",
+    color: "green",
     variant: "body",
   },
 } as Meta<typeof Component>;

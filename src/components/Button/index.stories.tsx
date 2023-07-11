@@ -10,6 +10,12 @@ export default {
     label: 'Primary',
     variant: 'primary',
     type: 'medium',
+    loading: false,
+  },
+  argTypes: {
+    width: { table:  { disable: true } },
+    height: { table:  { disable: true } },
+    shadowColor: { table:  { disable: true } },
   },
 } as Meta<typeof Component>;
 
