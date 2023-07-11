@@ -4,6 +4,7 @@ dist/
 lib/
 storybook-static/
 taskbox/
+storybook.requires.js
 
 # React Native
 *.jks

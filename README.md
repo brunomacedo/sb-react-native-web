@@ -6,7 +6,7 @@ React Native Storybook Web library using Shopify's Restyle
 - [x] React Native Web (Storybook)
 - [x] Build with Builder-Bob (Package to NPM)
 - [x] Preview on mobile (With Expo)
-- [ ] Wrap Storybook with ThemeProvider
+- [x] Wrap Storybook with ThemeProvider
 - [ ] Setup ESlint
 - [ ] Setup CommitLint
 - [ ] Setup Unit test

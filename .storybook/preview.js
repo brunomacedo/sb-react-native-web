@@ -1,8 +1,8 @@
 import React from "react";
-import type { Preview, Decorator } from "@storybook/react";
 import { ThemeProvider } from "../src/theme/ThemeProvider"
+import { Wrapper } from "../src/components/Wrapper";
 
-export const preview: Preview = {
+export const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -14,10 +14,12 @@ export const preview: Preview = {
   },
 };
 
-export const decorators: Decorator[] = [
+export const decorators = [
   (Story) => (
     <ThemeProvider>
-      <Story />
+      <Wrapper bg="white">
+        <Story />
+      </Wrapper>
     </ThemeProvider>
   ),
 ];
