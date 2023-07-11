@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { ReactNode } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+// import type { BaseTheme } from '@shopify/restyle';
 import { theme } from '../../theme/theme';
 import { Box } from '../Box';
 import type { Theme } from '../../theme/theme';
@@ -11,6 +11,7 @@ export function Wrapper({
   fullWidth = false,
   fullHeight = false,
 }: {
+  /** Background of the container */
   bg?: keyof Theme['colors'];
   children: ReactNode;
   fullWidth?: boolean;
@@ -19,7 +20,6 @@ export function Wrapper({
   return (
     <SafeAreaView style={styles.safearea}>
       <ScrollView contentContainerStyle={styles.grow} bounces={false}>
-        <StatusBar style="dark" />
         <Box
           flex={1}
           justifyContent="center"

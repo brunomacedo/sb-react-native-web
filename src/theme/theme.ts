@@ -62,9 +62,6 @@ export const theme = createTheme({
   fonts,
   colors,
   spacing,
-  breakpoints: {
-    phone: 0,
-  },
   textVariants: {
     H1: {
       fontSize: 32,

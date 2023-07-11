@@ -11,9 +11,9 @@ import type {
   VisibleProps,
 } from '@shopify/restyle';
 import { createText } from '@shopify/restyle';
-import type { Text as RNText } from 'react-native';
 import { Animated } from 'react-native';
-import type { Theme } from './../../theme/theme';
+import type { Text as RNText } from 'react-native';
+import { type Theme } from './../../theme/theme';
 
 const $Text = createText<Theme>();
 

@@ -22,6 +22,7 @@ module.exports = {
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: true,
+    docsMode: !Boolean(process.env.STORYBOOK_ENABLED),
   },
 }
