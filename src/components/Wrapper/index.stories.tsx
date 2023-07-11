@@ -3,7 +3,6 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Wrapper as Component, Text } from 'sb-react-native-web';
 
 export default {
-  title: 'Components/Wrapper',
   component: Component,
   args: {
     bg: 'gray25',

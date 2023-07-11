@@ -1,5 +1,5 @@
 let addons = [];
-let stories = ["../src/**/*.stories.@(js|jsx|ts|tsx)"];
+let stories = [];
 
 if (!Boolean(process.env.STORYBOOK_ENABLED)) {
   stories.push("../src/**/*.mdx");
@@ -13,7 +13,10 @@ if (!Boolean(process.env.STORYBOOK_ENABLED)) {
 
 module.exports = {
   addons,
-  stories,
+  stories: [
+    ...stories,
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
   staticDirs: [
     "../public",
   ],

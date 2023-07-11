@@ -13,7 +13,7 @@ import type {
 import { createText } from '@shopify/restyle';
 import { Animated } from 'react-native';
 import type { Text as RNText } from 'react-native';
-import { type Theme } from './../../theme/theme';
+import { type Theme } from '../../theme/theme';
 
 const $Text = createText<Theme>();
 

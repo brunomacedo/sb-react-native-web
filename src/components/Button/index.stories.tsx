@@ -4,7 +4,6 @@ import { User } from 'phosphor-react-native';
 import { Button as Component, theme } from 'sb-react-native-web';
 
 export default {
-  title: 'Components/Button',
   component: Component,
   args: {
     label: 'Primary',

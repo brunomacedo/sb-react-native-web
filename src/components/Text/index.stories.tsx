@@ -3,7 +3,6 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Text as Component } from 'sb-react-native-web';
 
 export default {
-  title: 'Components/Text',
   component: Component,
   args: {
     color: "green",
