@@ -74,7 +74,9 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
       - name: Install dependencies
-        run: yarn
+        run: |
+          yarn
+          yarn build-storybook
       - name: Publish
         if: ${{ success() }}
         uses: chromaui/action@v1
