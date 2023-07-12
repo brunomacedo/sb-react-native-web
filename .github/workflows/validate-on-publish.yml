@@ -52,10 +52,10 @@ jobs:
       - uses: actions/setup-node@v3
       - name: Semantic Release
         run: |
-          echo "prev_script_prepare=$(npm pkg get scripts.prepare | tr -d \")" >> $GITHUB_ENV
+          prev_script_prepare="$(npm pkg get scripts.prepare | tr -d \")"
           npm pkg delete scripts.prepare
           yarn
-          npm pkg set scripts.prepare="${{ env.prev_script_prepare }}"
+          npm pkg set scripts.prepare="$prev_script_prepare"
           npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
