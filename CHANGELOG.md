@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/brunomacedo/sb-react-native-web/compare/v1.0.0...v1.0.1) (2023-07-12)
+
+
+### Bug Fixes
+
+* **Release:** build storybook before publish ([3731636](https://github.com/brunomacedo/sb-react-native-web/commit/373163675eab1960768e6dd3c3eb11c481e98ecd))
+
 # 1.0.0 (2023-07-12)
 
 
