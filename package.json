@@ -37,6 +37,7 @@
     "build-storybook": "storybook build",
     "prepare": "npx husky install && yarn prebuild && bob build",
     "prebuild": "rm -rf ./dist && yarn tsc -p tsconfig.build.json",
+    "release": "HUSKY=0 yarn semantic-release",
     "chromatic": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
   },
   "dependencies": {
@@ -105,7 +106,7 @@
   },
   "release": {
     "branches": [
-      "master"
+      "main"
     ],
     "plugins": [
       [
@@ -133,7 +134,12 @@
           "changelogFile": "CHANGELOG.md"
         }
       ],
-      "@semantic-release/npm",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
       "@semantic-release/git",
       "@semantic-release/github"
     ]
