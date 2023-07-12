@@ -1,0 +1,69 @@
+name: validate-on-publish
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Code Validate 🪂
+    if: !github.event.pull_request.draft
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: yarn
+      - name: Lint
+        run: yarn lint
+
+  test:
+    needs: lint
+    name: Run Tests 🧪
+    runs-on: ubuntu-latest
+    if: !github.event.pull_request.draft
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: yarn
+      - name: Test
+        run: yarn test --watchAll=false
+
+  build:
+    needs: test
+    name: Generate Build 💥
+    runs-on: ubuntu-latest
+    if: !github.event.pull_request.draft
+    steps:
+      - name: Semantic Release
+        run: |
+          yarn
+          npx semantic-release
+          echo "curr_version=$(npm pkg get version)" >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+
+  chromatic:
+    needs: test
+    name: Publish Chromatic 🚀
+    runs-on: ubuntu-latest
+    if: !github.event.pull_request.draft
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: yarn
+      - name: Publish
+        if: ${{ success() }}
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
