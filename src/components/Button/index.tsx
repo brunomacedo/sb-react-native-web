@@ -1,5 +1,4 @@
 import React from 'react';
-import { GestureResponderEvent, TouchableOpacity } from 'react-native';
 import {
   createVariant,
   VariantProps,
@@ -11,6 +10,8 @@ import { Spinner } from '../Spinner';
 import { useTheme } from '../../theme/ThemeProvider';
 
 import type { theme, Theme } from '../../theme/theme';
+
+import { GestureResponderEvent, TouchableOpacity } from 'react-native';
 
 type ButtonProps = React.ComponentProps<typeof ButtonContainer> & {
   label?: string;
@@ -107,8 +108,8 @@ export const Button: React.FC<ButtonProps> = ({
     : disabled
     ? 'disabled'
     : variant;
-  let textColor: keyof typeof theme.colors = 'white';
 
+  let textColor: keyof typeof theme.colors = 'white';
   let minHeight = typeButton.large;
 
   if (typeof variant !== 'object' && variant) {
