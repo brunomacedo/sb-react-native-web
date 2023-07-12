@@ -13,7 +13,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     name: Code Validate 🪂
-    if: !github.event.pull_request.draft
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -26,7 +25,6 @@ jobs:
     needs: lint
     name: Run Tests 🧪
     runs-on: ubuntu-latest
-    if: !github.event.pull_request.draft
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -39,7 +37,6 @@ jobs:
     needs: test
     name: Generate Build 💥
     runs-on: ubuntu-latest
-    if: !github.event.pull_request.draft
     steps:
       - name: Semantic Release
         run: |
@@ -53,7 +50,6 @@ jobs:
     needs: test
     name: Publish Chromatic 🚀
     runs-on: ubuntu-latest
-    if: !github.event.pull_request.draft
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
