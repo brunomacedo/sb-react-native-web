@@ -12,32 +12,22 @@ export default {
     loading: false,
   },
   argTypes: {
-    width: { table:  { disable: true } },
-    height: { table:  { disable: true } },
-    shadowColor: { table:  { disable: true } },
+    width: { table: { disable: true } },
+    height: { table: { disable: true } },
+    shadowColor: { table: { disable: true } },
   },
 } as Meta<typeof Component>;
 
 export const Primary: StoryFn<typeof Component> = (args) => (
   <>
     <Component {...args} />
-    <Component
-      {...args}
-      marginTop="spacing-s"
-      loading
-    />
+    <Component {...args} marginTop="spacing-s" loading />
     <Component
       {...args}
       label="Text"
-      onPress={() => { }}
+      onPress={() => {}}
       marginTop="spacing-s"
-      icon={(
-        <User
-          weight="bold"
-          color={theme.colors.white}
-          size={14}
-        />)
-      }
+      icon={<User weight="bold" color={theme.colors.white} size={14} />}
     />
   </>
 );
@@ -47,6 +37,6 @@ export const Outlined: StoryFn<typeof Component> = (args) => (
 );
 
 Outlined.args = {
-  label: "Outlined",
-  variant: "outlined"
+  label: 'Outlined',
+  variant: 'outlined',
 };

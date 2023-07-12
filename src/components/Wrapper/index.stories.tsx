@@ -10,14 +10,12 @@ export default {
     fullHeight: false,
   },
   argTypes: {
-    children: { control: { type: null } }
+    children: { control: { type: null } },
   },
 } as Meta<typeof Component>;
 
 export const Wrapper: StoryFn<typeof Component> = (args) => (
   <Component {...args}>
-    <Text variant='body'>
-      Hello world!
-    </Text>
+    <Text variant="body">Hello world!</Text>
   </Component>
 );

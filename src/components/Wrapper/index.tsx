@@ -24,8 +24,8 @@ export function Wrapper({
           flex={1}
           justifyContent="center"
           backgroundColor={bg}
-          paddingVertical={fullHeight ? "spacing-none" : "spacing-s"}
-          paddingHorizontal={fullWidth ? "spacing-none" : "spacing-s"}
+          paddingVertical={fullHeight ? 'spacing-none' : 'spacing-s'}
+          paddingHorizontal={fullWidth ? 'spacing-none' : 'spacing-s'}
         >
           <Box>{children}</Box>
         </Box>

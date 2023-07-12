@@ -5,13 +5,11 @@ import { Text as Component } from 'sb-react-native-web';
 export default {
   component: Component,
   args: {
-    color: "green",
-    variant: "body",
+    color: 'green',
+    variant: 'body',
   },
 } as Meta<typeof Component>;
 
 export const Text: StoryFn<typeof Component> = (args) => (
-  <Component {...args}>
-    Hello world!
-  </Component>
+  <Component {...args}>Hello world!</Component>
 );

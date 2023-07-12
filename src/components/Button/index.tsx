@@ -131,9 +131,7 @@ export const Button: React.FC<ButtonProps> = ({
         {loading ? (
           <Spinner
             size={type}
-            variant={
-              variant === 'outlined' ? 'secondary' : 'primary'
-            }
+            variant={variant === 'outlined' ? 'secondary' : 'primary'}
           />
         ) : (
           <>

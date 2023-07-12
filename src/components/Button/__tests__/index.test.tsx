@@ -7,7 +7,7 @@ describe('Test Button component', () => {
     const mockCallBack = jest.fn();
 
     const { getByText, toJSON } = render(
-      <Button label='Test' onPress={mockCallBack} />
+      <Button label="Test" onPress={mockCallBack} />
     );
 
     const button = getByText('Test');

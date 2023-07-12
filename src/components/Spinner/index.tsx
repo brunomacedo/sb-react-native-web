@@ -16,10 +16,7 @@ interface IProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-export const Spinner = ({
-  variant = 'primary',
-  size = 'medium',
-}: IProps) => {
+export const Spinner = ({ variant = 'primary', size = 'medium' }: IProps) => {
   const rotation = useSharedValue(0);
 
   const spinnerSize = React.useMemo(
@@ -71,12 +68,7 @@ export const Spinner = ({
   return (
     <Box style={styles.container}>
       <Animated.View
-        style={[
-          styles.spinner,
-          animatedStyles,
-          sizeStyle,
-          colorStyle,
-        ]}
+        style={[styles.spinner, animatedStyles, sizeStyle, colorStyle]}
       />
     </Box>
   );

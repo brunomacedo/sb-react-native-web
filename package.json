@@ -27,8 +27,12 @@
   },
   "scripts": {
     "test": "jest --watch --verbose",
+    "test:cov": "jest --coverage",
+    "test:staged": "jest --onlyChanged --watchAll=false",
+    "snapshot": "jest --updateSnapshot",
     "start": "cross-env STORYBOOK_ENABLED='true' sb-rn-get-stories && expo start",
     "storybook": "storybook dev -p 6006",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "build": "bob build",
     "build-storybook": "storybook build",
     "prepare": "npx husky install && yarn prebuild && bob build",
@@ -49,9 +53,15 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@commitlint/config-conventional": "^17.6.6",
     "@react-native-async-storage/async-storage": "1.17.11",
     "@react-native-community/datetimepicker": "6.7.3",
+    "@react-native-community/eslint-config": "^3.2.0",
     "@react-native-community/slider": "^4.4.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.3",
+    "@semantic-release/release-notes-generator": "^11.0.4",
     "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
@@ -71,20 +81,70 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-react-native-web": "^0.19.6",
     "chromatic": "^6.19.9",
+    "commitlint": "^17.6.6",
     "cross-env": "^7.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-ft-flow": "^2.0.3",
+    "eslint-plugin-prettier": "^5.0.0",
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
     "husky": "^8.0.3",
     "jest": "^29.6.1",
     "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
     "react-dom": "^18.2.0",
     "react-native-builder-bob": "^0.21.2",
     "react-native-reanimated": "~2.14.4",
     "react-native-safe-area-context": "4.5.0",
     "react-native-web": "~0.18.10",
     "react-test-renderer": "^18.2.0",
+    "semantic-release": "^21.0.7",
     "storybook": "^7.0.26",
     "typescript": "^4.9.4"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "angular",
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          },
+          "writerOpts": {
+            "commitsSort": [
+              "subject",
+              "scope"
+            ]
+          }
+        }
+      ],
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx},!node_modules/**/*.{js,jsx,ts,tsx}": [
+      "tsc --noEmit"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix"
+    ]
   },
   "keywords": [
     "storybook",

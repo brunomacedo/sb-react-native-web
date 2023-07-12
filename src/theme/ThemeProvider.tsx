@@ -13,9 +13,5 @@ export const useTheme = (): Theme => {
 };
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  return (
-    <RestyleThemeProvider theme={theme}>
-      {children}
-    </RestyleThemeProvider>
-  );
+  return <RestyleThemeProvider theme={theme}>{children}</RestyleThemeProvider>;
 };

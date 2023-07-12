@@ -17,7 +17,7 @@ import { type Theme } from '../../theme/theme';
 
 const $Text = createText<Theme>();
 
-type BaseTextProps<Theme extends BaseTheme> = ColorProps<Theme> &
+type BaseTextProps<ThemeText extends BaseTheme> = ColorProps<ThemeText> &
   OpacityProps<Theme> &
   VisibleProps<Theme> &
   TypographyProps<Theme> &
@@ -30,7 +30,7 @@ interface IProps {
   color?: keyof Theme['colors'];
 }
 
-export type TextProps<Theme extends BaseTheme> = BaseTextProps<Theme> &
+export type TextProps<ThemeText extends BaseTheme> = BaseTextProps<ThemeText> &
   SpacingShorthandProps<Theme>;
 
 /**
