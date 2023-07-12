@@ -1,3 +1,5 @@
+const path = require('path');
+
 let addons = [];
 let stories = [];
 
@@ -27,5 +29,12 @@ module.exports = {
   docs: {
     autodocs: true,
     docsMode: !Boolean(process.env.STORYBOOK_ENABLED),
+  },
+  webpackFinal: async (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'test-utils': path.resolve(__dirname, '../test-utils'),
+    };
+    return config;
   },
 }

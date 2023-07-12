@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
-import { render } from '@testing-library/react-native';
-import { ThemeProvider } from '../src/theme/ThemeProvider';
+import { render } from "@testing-library/react-native";
+import { ThemeProvider } from "../src/theme/ThemeProvider";
 
 const AllTheProviders = ({ children }: { children: ReactElement }) => {
   return (
@@ -10,11 +10,14 @@ const AllTheProviders = ({ children }: { children: ReactElement }) => {
   )
 }
 
-const customRender = (component: ReactElement, options = {}) =>
-  render(component, { wrapper: AllTheProviders, ...options })
+const customRender = (component: ReactElement, options = {}) => (
+  render(component, {
+    wrapper: AllTheProviders, ...options
+  })
+);
 
 // re-export everything
-export * from '@testing-library/react-native'
+export * from "@testing-library/react-native"
 
 // override render method
 export { customRender as render }

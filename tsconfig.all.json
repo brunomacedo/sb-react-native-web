@@ -4,7 +4,10 @@
     "paths": {
       "sb-react-native-web": [
         "./src/index.tsx"
-      ]
+      ],
+      "test-utils": [
+        "./test-utils/index.tsx"
+      ],
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -36,7 +39,6 @@
     "lib",
     "node_modules",
     "public",
-    "test-utils",
     "app.config.js",
     "babel.config.js",
     "bob.config.js",

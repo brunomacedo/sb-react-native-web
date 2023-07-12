@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.all",
   "exclude": [
+    "jest-utils/**/*",
     "src/**/*.stories.*",
     "src/**/*.test.*",
     "src/**/*.mdx"
