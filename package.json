@@ -35,10 +35,10 @@
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "build": "bob build",
     "build-storybook": "storybook build",
-    "prepare": "npx husky install && yarn prebuild && bob build",
     "prebuild": "rm -rf ./dist && yarn tsc -p tsconfig.build.json",
     "release": "HUSKY=0 yarn semantic-release",
-    "chromatic": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
+    "chromatic": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}",
+    "prepare": "npx husky install && yarn prebuild && bob build"
   },
   "dependencies": {
     "@shopify/restyle": "^2.4.2",

@@ -33,7 +33,9 @@ jobs:
         run: yarn test --watchAll=false
 
   build:
-    needs: test
+    needs:
+      - lint
+      - test
     name: Generate Build 💥
     runs-on: ubuntu-latest
     permissions:
@@ -43,21 +45,33 @@ jobs:
       deployments: write
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v3
       - name: Semantic Release
         run: |
+          echo "prev_script_prepare=$(npm pkg get scripts.prepare | tr -d \")" >> $GITHUB_ENV
+          npm pkg delete scripts.prepare
           yarn
+          npm pkg set scripts.prepare="${{ env.prev_script_prepare }}"
           npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   chromatic:
-    needs: build
+    needs:
+      - lint
+      - test
+      - build
     name: Publish Chromatic 🚀
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v3
       - name: Install dependencies
         run: yarn
